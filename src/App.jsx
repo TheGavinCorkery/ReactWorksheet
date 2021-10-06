@@ -3,6 +3,7 @@ import DisplayName from './components/DisplayName/DisplayName';
 import AlertUser from './components/AlertUser/AlertUser';
 import SuperheroTable from './components/SuperheroTable/SuperheroTable';
 import SuperheroCreate from './components/SuperheroCreate/SuperheroCreate';
+import Joke from './components/JokeAPI/Joke';
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +54,9 @@ class App extends Component {
         <SuperheroTable heroes = {this.state.superheroes}/>
         <hr />
         <SuperheroCreate createNewHero = {this.createHero}/>
+        <hr />
+        <br />
+        <Joke />
       </div>
      );
   }
