@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DisplayName from './components/DisplayName/DisplayName';
 import AlertUser from './components/AlertUser/AlertUser';
 import SuperheroTable from './components/SuperheroTable/SuperheroTable';
+import SuperheroCreate from './components/SuperheroCreate/SuperheroCreate';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,15 @@ class App extends Component {
     ]
     } 
   }
+
+  createHero = (newHero) => {
+    let tempHeroes = this.state.superheroes
+    tempHeroes.push(newHero)
+    this.setState({
+      superheroes: tempHeroes
+    })
+  }
+
   render() { 
     return ( 
       <div id = "container-fluid">
@@ -41,6 +51,8 @@ class App extends Component {
         <AlertUser />
         <hr />
         <SuperheroTable heroes = {this.state.superheroes}/>
+        <hr />
+        <SuperheroCreate createNewHero = {this.createHero}/>
       </div>
      );
   }
